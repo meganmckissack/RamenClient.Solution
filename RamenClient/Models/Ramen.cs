@@ -25,5 +25,34 @@ namespace RamenClient.Models
 
       return ramenList;
     }
+
+    public static Ramen GetDetails(int id)
+    {
+      var apiCallTask = ApiHelper.Get(id);
+      var result = apiCallTask.Result;
+
+      JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);
+      Ramen ramen = JsonConvert.DeserializeObject<Ramen>(jsonResponse.ToString());
+
+      return ramen;
+    }
+
+    public static void Post(Ramen ramen)
+    {
+      string jsonRamen = JsonConvert.SerializeObject(ramen);
+      var apiCallTask = ApiHelper.Post(jsonRamen);
+    }
+
+    public static void Put(Ramen ramen)
+    {
+      string jsonRamen = JsonConvert.SerializeObject(ramen);
+      var apiCallTask = ApiHelper.Put(ramen.RamenId, jsonRamen);
+    }
+
+    public static void Delete(int id)
+    {
+      var apiCallTask = ApiHelper.Delete(id);
+    }
+
   }
 }
