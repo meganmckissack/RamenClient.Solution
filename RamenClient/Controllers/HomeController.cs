@@ -13,7 +13,7 @@ namespace RamenClient.Controllers
   {
     public IActionResult Index()
     {
-      return RedirectToAction("Index", "Ramens");
+      return View();
     }
   }
 }

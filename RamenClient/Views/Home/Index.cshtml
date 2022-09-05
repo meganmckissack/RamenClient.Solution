@@ -4,20 +4,6 @@
     ViewData["Title"] = "Home Page";
 }
 
-<h1>All Ramen:</h1>
-
-<ol>
-@foreach (Ramen ramen in Model)
-{
-    <ul>
-        <li>ID: @ramen.RamenId</li>
-        <li>Type: @ramen.Type</li>
-        <li>Description: @ramen.Description</li>
-        <li>Restaurant: @ramen.Restaurant</li>
-        <li>Location: @ramen.Location</li>
-        <li>Rating: @ramen.Rating</li>
-        <li>Review: @ramen.Review</li>
-    </ul>
-    <br>
-}
-</ol>
+<div class="container">
+  <img class="hero-img" src='~/images/ramen.png' alt="ramen illustration" />
+</div>
